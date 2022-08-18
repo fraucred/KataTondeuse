@@ -10,4 +10,10 @@ public class CoordinatesTest {
         MowerCoordinates coordinates = new MowerCoordinates();
         Assertions.assertNull(coordinates.getAxis());
     }
+
+    @Test
+    public void should_return_null_coordinates_when_x_axis_is_null() {
+        MowerCoordinates coordinates = new MowerCoordinates(null);
+        Assertions.assertNull(coordinates.getHorizontalAxis());
+    }
 }
