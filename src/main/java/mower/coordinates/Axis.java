@@ -6,6 +6,6 @@ public class Axis {
     }
 
     public Object getVerticalAxis() {
-        return new Object();
+        return null;
     }
 }
