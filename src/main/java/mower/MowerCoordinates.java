@@ -6,7 +6,11 @@ public class MowerCoordinates {
     public MowerCoordinates() {
     }
 
-    public MowerCoordinates(Integer i) {
+    public MowerCoordinates(Integer horizontalAxis) {
+
+    }
+
+    public MowerCoordinates(Integer horizontalAxis, Integer verticalAxis) {
 
     }
 
@@ -16,5 +20,9 @@ public class MowerCoordinates {
 
     public Object getHorizontalAxis() {
         return new Axis().getHorizontalAxis();
+    }
+
+    public Object getVerticalAxis() {
+        return new Axis().getVerticalAxis();
     }
 }
