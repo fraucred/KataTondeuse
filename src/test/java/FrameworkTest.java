@@ -1,7 +1,7 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class SuccessTest {
+public class FrameworkTest {
 
     @Test
     public void successfully_test_testing_framework() {
