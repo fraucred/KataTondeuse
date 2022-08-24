@@ -3,7 +3,7 @@ package mower;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class CoordinatesTest {
+public class MowerCoordinatesTest {
 
     @Test
     public void should_return_null_axis_when_there_are_none_axis() {
@@ -26,4 +26,6 @@ public class CoordinatesTest {
         Assertions.assertNull(coordinates.getHorizontalAxis());
         Assertions.assertNull(coordinates.getVerticalAxis());
     }
+
+
 }
