@@ -33,4 +33,14 @@ public class MowerGrassTest {
         assertEquals(expectedGrassHeight, grass.getHeight());
     }
 
+    @Test
+    void should_update_4_by_4_sized_grass_to_5_by_5_sized_grass() {
+        MowerGrass grass = new MowerGrass(4, 4);
+        Integer expectedGrassWidth = 5;
+        Integer expectedGrassHeight = 5;
+
+        assertEquals(expectedGrassWidth, grass.getWidth());
+        assertEquals(expectedGrassHeight, grass.getHeight());
+    }
+
 }
