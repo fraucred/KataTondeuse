@@ -26,6 +26,6 @@ public class MowerCoordinates {
     }
 
     public void updateCoordinates(Integer newHorizontalAxis, Integer newVerticalAxis) {
-
+        this.axis.updateCoordinates(newHorizontalAxis, newVerticalAxis);
     }
 }
