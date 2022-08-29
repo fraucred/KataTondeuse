@@ -22,4 +22,15 @@ public class MowerGrassTest {
         assertEquals(expectedGrassWidth, grass.getWidth());
         assertEquals(expectedGrassHeight, grass.getHeight());
     }
+
+    @Test
+    void should_return_4_by_4_sized_grass() {
+        MowerGrass grass = new MowerGrass(4, 4);
+        Integer expectedGrassWidth = 4;
+        Integer expectedGrassHeight = 4;
+
+        assertEquals(expectedGrassWidth, grass.getWidth());
+        assertEquals(expectedGrassHeight, grass.getHeight());
+    }
+
 }

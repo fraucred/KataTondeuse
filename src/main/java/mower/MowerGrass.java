@@ -3,12 +3,16 @@ package mower;
 import mower.grass.Grass;
 
 public class MowerGrass {
+    private Integer grassWidth;
+    private Integer grassHeight;
+
     public MowerGrass() {
 
     }
 
     public MowerGrass(Integer grassWidth, Integer grassHeight) {
-
+        this.grassWidth = grassWidth;
+        this.grassHeight = grassHeight;
     }
 
     public Object getGrass() {
@@ -16,10 +20,10 @@ public class MowerGrass {
     }
 
     public Integer getWidth() {
-        return 3;
+        return this.grassWidth;
     }
 
     public Integer getHeight() {
-        return 3;
+        return this.grassHeight;
     }
 }
