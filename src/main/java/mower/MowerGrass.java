@@ -16,10 +16,10 @@ public class MowerGrass {
     }
 
     public Integer getWidth() {
-        return null;
+        return 3;
     }
 
     public Integer getHeight() {
-        return null;
+        return 3;
     }
 }
