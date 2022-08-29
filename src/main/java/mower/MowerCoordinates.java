@@ -24,4 +24,8 @@ public class MowerCoordinates {
     public Object getVerticalAxis() {
         return this.axis.getVerticalAxis();
     }
+
+    public void updateCoordinates(Integer newHorizontalAxis, Integer newVerticalAxis) {
+
+    }
 }

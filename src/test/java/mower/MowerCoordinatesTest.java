@@ -35,5 +35,13 @@ public class MowerCoordinatesTest {
         Assertions.assertEquals(0, coordinates.getVerticalAxis());
     }
 
+    @Test
+    public void should_return_1_1_coordinates_when_horizontal_and_vertical_axis_are_0() {
+        MowerCoordinates coordinates = new MowerCoordinates(0, 0);
 
+        coordinates.updateCoordinates(1,1);
+
+        Assertions.assertEquals(1, coordinates.getHorizontalAxis());
+        Assertions.assertEquals(1, coordinates.getVerticalAxis());
+    }
 }
