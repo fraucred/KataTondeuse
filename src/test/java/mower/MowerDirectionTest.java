@@ -2,8 +2,10 @@ package mower;
 
 import mower.direction.Direction;
 import mower.direction.DirectionEnum;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 public class MowerDirectionTest {
 
@@ -13,14 +15,14 @@ public class MowerDirectionTest {
     public void should_return_null_direction_when_direction_is_null() {
         MowerDirection direction = new MowerDirection(null);
 
-        Assertions.assertNull(direction.getDirection());
+        assertNull(direction.getDirection());
     }
 
     @Test
     public void should_return_north_direction_when_direction_is_north() {
         MowerDirection direction = new MowerDirection(DirectionEnum.NORTH);
 
-        Assertions.assertEquals(DirectionEnum.NORTH, direction.getDirection());
+        assertEquals(DirectionEnum.NORTH, direction.getDirection());
     }
 
     @Test
@@ -29,6 +31,6 @@ public class MowerDirectionTest {
 
         direction.updateDirection(SOUTH);
 
-        Assertions.assertEquals(DirectionEnum.SOUTH, direction.getDirection());
+        assertEquals(DirectionEnum.SOUTH, direction.getDirection());
     }
 }

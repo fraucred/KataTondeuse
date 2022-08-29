@@ -2,6 +2,7 @@ package mower;
 
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
 public class MowerGrassTest {
@@ -10,5 +11,15 @@ public class MowerGrassTest {
         MowerGrass grass = new MowerGrass();
 
         assertNull(grass.getGrass());
+    }
+
+    @Test
+    void should_return_3_by_3_sized_grass() {
+        MowerGrass grass = new MowerGrass(3, 3);
+        Integer expectedGrassWidth = 3;
+        Integer expectedGrassHeight = 3;
+
+        assertEquals(expectedGrassWidth, grass.getWidth());
+        assertEquals(expectedGrassHeight, grass.getHeight());
     }
 }
