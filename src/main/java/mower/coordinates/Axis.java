@@ -1,19 +1,19 @@
 package mower.coordinates;
 
 public class Axis {
-    private Integer horizontalAxis;
-    private Integer verticalAxis;
+    private final HorizontalAxis horizontalAxis = new HorizontalAxis(null);
+    private final VerticalAxis verticalAxis = new VerticalAxis(null);
 
-    public Integer getHorizontalAxis() {
+    public HorizontalAxis getHorizontalAxis() {
         return horizontalAxis;
     }
 
-    public Integer getVerticalAxis() {
+    public VerticalAxis getVerticalAxis() {
         return verticalAxis;
     }
 
     public void updateCoordinates(Integer newHorizontalAxis, Integer newVerticalAxis) {
-        this.horizontalAxis = newHorizontalAxis;
-        this.verticalAxis = newVerticalAxis;
+        this.horizontalAxis.updateValue(newHorizontalAxis);
+        this.verticalAxis.updateValue(newVerticalAxis);
     }
 }

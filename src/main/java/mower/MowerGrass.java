@@ -4,19 +4,10 @@ import mower.grass.Grass;
 
 public class MowerGrass {
 
-    private Grass grass;
-
-    public MowerGrass() {
-
-    }
+    private final Grass grass = new Grass();
 
     public MowerGrass(Integer grassWidth, Integer grassHeight) {
-        this.grass = new Grass();
         this.grass.updateSize(grassWidth, grassHeight);
-    }
-
-    public Grass getGrass() {
-        return this.grass;
     }
 
     public Integer getWidth() {

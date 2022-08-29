@@ -4,14 +4,9 @@ import mower.dimensions.Height;
 import mower.dimensions.Width;
 
 public class Grass {
-    private final Width width;
+    private final Width width = new Width(null);
 
-    private final Height height;
-
-    public Grass() {
-        this.width = new Width();
-        this.height = new Height();
-    }
+    private final Height height = new Height(null);
 
     public void updateSize(Integer newWidth, Integer newHeight) {
         this.width.updateValue(newWidth);
