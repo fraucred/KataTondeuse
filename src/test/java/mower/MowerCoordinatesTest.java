@@ -14,7 +14,7 @@ public class MowerCoordinatesTest {
 
     @Test
     public void should_return_null_horizontal_axis_when_horizontal_axis_is_null() {
-        MowerCoordinates coordinates = new MowerCoordinates(null);
+        MowerCoordinates coordinates = new MowerCoordinates(null, 0);
 
         Assertions.assertNull(coordinates.getHorizontalAxis());
     }
