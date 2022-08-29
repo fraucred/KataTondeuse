@@ -26,4 +26,8 @@ public class MowerGrass {
     public Integer getHeight() {
         return this.grass.getHeight();
     }
+
+    public void updateSize(Integer newGrassWidth, Integer newGrassHeight) {
+        this.grass.updateSize(newGrassWidth, newGrassHeight);
+    }
 }

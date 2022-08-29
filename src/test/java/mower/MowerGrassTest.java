@@ -39,6 +39,8 @@ public class MowerGrassTest {
         Integer expectedGrassWidth = 5;
         Integer expectedGrassHeight = 5;
 
+        grass.updateSize(5,5);
+
         assertEquals(expectedGrassWidth, grass.getWidth());
         assertEquals(expectedGrassHeight, grass.getHeight());
     }
