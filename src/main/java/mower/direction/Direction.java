@@ -10,4 +10,8 @@ public class Direction {
     public Object getDirection() {
         return this.directionCardinal;
     }
+
+    public void updateDirection(DirectionEnum directionCardinal) {
+
+    }
 }

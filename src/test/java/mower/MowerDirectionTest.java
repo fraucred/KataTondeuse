@@ -19,4 +19,13 @@ public class MowerDirectionTest {
 
         Assertions.assertEquals(DirectionEnum.NORTH, direction.getDirection());
     }
+
+    @Test
+    public void should_update_north_direction_to_south_direction() {
+        MowerDirection direction = new MowerDirection(DirectionEnum.NORTH);
+
+        direction.updateDirection(DirectionEnum.SOUTH);
+
+        Assertions.assertEquals(DirectionEnum.SOUTH, direction.getDirection());
+    }
 }

@@ -12,4 +12,8 @@ public class MowerDirection {
     public Object getDirection() {
         return this.direction.getDirection();
     }
+
+    public void updateDirection(DirectionEnum directionCardinal) {
+        this.direction.updateDirection(directionCardinal);
+    }
 }
