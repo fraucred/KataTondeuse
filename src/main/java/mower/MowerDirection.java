@@ -4,7 +4,7 @@ import mower.direction.Direction;
 import mower.direction.DirectionEnum;
 
 public class MowerDirection {
-    private final Direction direction;
+    private Direction direction;
     public MowerDirection(DirectionEnum directionCardinal) {
         this.direction = new Direction(directionCardinal);
     }
@@ -13,7 +13,7 @@ public class MowerDirection {
         return this.direction.getDirection();
     }
 
-    public void updateDirection(DirectionEnum directionCardinal) {
-        this.direction.updateDirection(directionCardinal);
+    public void updateDirection(Direction newDirection) {
+        this.direction = newDirection;
     }
 }
