@@ -1,6 +1,6 @@
 package mower.dimensions;
 
-import mower.SimpleValue;
+import mower.common.SimpleValue;
 
 public class Height extends SimpleValue {
 }

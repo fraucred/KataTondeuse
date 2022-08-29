@@ -1,4 +1,4 @@
-package mower;
+package mower.common;
 
 public abstract class SimpleValue {
     
