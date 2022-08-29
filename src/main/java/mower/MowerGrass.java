@@ -3,27 +3,27 @@ package mower;
 import mower.grass.Grass;
 
 public class MowerGrass {
-    private Integer grassWidth;
-    private Integer grassHeight;
+
+    private Grass grass;
 
     public MowerGrass() {
 
     }
 
     public MowerGrass(Integer grassWidth, Integer grassHeight) {
-        this.grassWidth = grassWidth;
-        this.grassHeight = grassHeight;
+        this.grass = new Grass();
+        this.grass.updateSize(grassWidth, grassHeight);
     }
 
-    public Object getGrass() {
-        return new Grass().getGrass();
+    public Grass getGrass() {
+        return this.grass;
     }
 
     public Integer getWidth() {
-        return this.grassWidth;
+        return this.grass.getWidth();
     }
 
     public Integer getHeight() {
-        return this.grassHeight;
+        return this.grass.getHeight();
     }
 }
