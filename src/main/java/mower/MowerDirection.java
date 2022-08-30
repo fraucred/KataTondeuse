@@ -6,7 +6,7 @@ import mower.direction.DirectionEnum;
 import java.util.Objects;
 
 public class MowerDirection {
-    private Direction direction;
+    private final Direction direction;
     public MowerDirection(DirectionEnum directionCardinal) {
         this.direction = new Direction(directionCardinal);
     }
@@ -19,8 +19,8 @@ public class MowerDirection {
         return this.direction.getDirection();
     }
 
-    public void updateDirection(Direction newDirection) {
-        this.direction = newDirection;
+    public void updateDirection(DirectionEnum newDirection) {
+        this.direction.updateDirection(newDirection);
     }
 
     @Override

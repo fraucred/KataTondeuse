@@ -29,7 +29,7 @@ public class MowerDirectionTest {
     public void should_update_north_direction_to_south_direction() {
         MowerDirection direction = new MowerDirection(DirectionEnum.NORTH);
 
-        direction.updateDirection(SOUTH);
+        direction.updateDirection(DirectionEnum.SOUTH);
 
         assertEquals(DirectionEnum.SOUTH, direction.getDirection());
     }
