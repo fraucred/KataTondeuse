@@ -14,14 +14,27 @@ public class Mower {
         return this.direction;
     }
 
-    public void turns(String right) {
-        if ("RIGHT".equals(right)) {
+    public void turns(String direction) {
+        if ("RIGHT".equals(direction)) {
             if (DirectionEnum.EAST.equals(this.direction.getDirection())) {
-                direction.updateDirection(DirectionEnum.SOUTH);
+                this.direction.updateDirection(DirectionEnum.SOUTH);
             } else if (DirectionEnum.SOUTH.equals(this.direction.getDirection())) {
-                direction.updateDirection(DirectionEnum.WEST);
+                this.direction.updateDirection(DirectionEnum.WEST);
+            } else if (DirectionEnum.WEST.equals(this.direction.getDirection())) {
+                this.direction.updateDirection(DirectionEnum.NORTH);
             } else {
-                direction.updateDirection(DirectionEnum.EAST);
+                this.direction.updateDirection(DirectionEnum.EAST);
+            }
+        }
+        if ("LEFT".equals(direction)) {
+            if (DirectionEnum.EAST.equals(this.direction.getDirection())) {
+                this.direction.updateDirection(DirectionEnum.NORTH);
+            } else if (DirectionEnum.SOUTH.equals(this.direction.getDirection())) {
+                this.direction.updateDirection(DirectionEnum.EAST);
+            } else if (DirectionEnum.WEST.equals(this.direction.getDirection())) {
+                this.direction.updateDirection(DirectionEnum.SOUTH);
+            } else {
+                this.direction.updateDirection(DirectionEnum.WEST);
             }
         }
     }
