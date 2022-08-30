@@ -37,4 +37,16 @@ public class MowerTest {
 
         assertEquals(expectedDirection, mower.getDirection());
     }
+
+    @Test
+    public void should_return_west_direction_when_mower_turns_right_thrice_from_north_direction() {
+        Mower mower = new Mower();
+        MowerDirection expectedDirection = new MowerDirection(DirectionEnum.WEST);
+
+        mower.turns("RIGHT");
+        mower.turns("RIGHT");
+        mower.turns("RIGHT");
+
+        assertEquals(expectedDirection, mower.getDirection());
+    }
 }
