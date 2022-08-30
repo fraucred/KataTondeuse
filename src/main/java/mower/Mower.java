@@ -8,4 +8,8 @@ public class Mower {
     public Object getDirection() {
         return new MowerDirection();
     }
+
+    public void turns(String right) {
+
+    }
 }

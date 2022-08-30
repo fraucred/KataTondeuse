@@ -1,5 +1,6 @@
 package mower;
 
+import mower.direction.DirectionEnum;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -13,6 +14,16 @@ public class MowerTest {
         MowerDirection expectedDirection = new MowerDirection();
 
         assertEquals(expectedCoordinates, mower.getCoordinates());
+        assertEquals(expectedDirection, mower.getDirection());
+    }
+
+    @Test
+    public void should_return_east_direction_when_mower_turns_right_from_north_direction() {
+        Mower mower = new Mower();
+        MowerDirection expectedDirection = new MowerDirection(DirectionEnum.EAST);
+
+        mower.turns("RIGHT");
+
         assertEquals(expectedDirection, mower.getDirection());
     }
 }
