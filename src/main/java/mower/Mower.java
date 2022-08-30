@@ -18,6 +18,8 @@ public class Mower {
         if ("RIGHT".equals(right)) {
             if (DirectionEnum.EAST.equals(this.direction.getDirection())) {
                 direction.updateDirection(DirectionEnum.SOUTH);
+            } else if (DirectionEnum.SOUTH.equals(this.direction.getDirection())) {
+                direction.updateDirection(DirectionEnum.WEST);
             } else {
                 direction.updateDirection(DirectionEnum.EAST);
             }
