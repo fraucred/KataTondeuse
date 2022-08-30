@@ -15,7 +15,7 @@ public class MowerDirection {
         this.direction = new Direction(DirectionEnum.NORTH);
     }
 
-    public Object getDirection() {
+    public DirectionEnum getDirection() {
         return this.direction.getDirection();
     }
 

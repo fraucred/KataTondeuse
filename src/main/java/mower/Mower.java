@@ -16,7 +16,11 @@ public class Mower {
 
     public void turns(String right) {
         if ("RIGHT".equals(right)) {
-            direction.updateDirection(DirectionEnum.EAST);
+            if (DirectionEnum.EAST.equals(this.direction.getDirection())) {
+                direction.updateDirection(DirectionEnum.SOUTH);
+            } else {
+                direction.updateDirection(DirectionEnum.EAST);
+            }
         }
     }
 }
