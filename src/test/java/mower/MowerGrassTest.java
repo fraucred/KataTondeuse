@@ -48,4 +48,13 @@ public class MowerGrassTest {
         assertFalse(areValidCoordinates);
     }
 
+    @Test
+    void should_return_true_valid_coordinates_when_coordinates_are_inside_of_3_by_3_sized_grass() {
+        MowerGrass grass = new MowerGrass(3, 3);
+        MowerCoordinates rightCoordinates = new MowerCoordinates(2, 2);
+
+        Boolean areValidCoordinates = grass.checkValidCoordinates(rightCoordinates);
+
+        assertTrue(areValidCoordinates);
+    }
 }
