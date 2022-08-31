@@ -1,6 +1,7 @@
 package mower;
 
 import mower.direction.DirectionEnum;
+import mower.direction.SideEnum;
 
 public class Mower {
 
@@ -14,28 +15,56 @@ public class Mower {
         return this.direction;
     }
 
-    public void turns(String direction) {
-        if ("RIGHT".equals(direction)) {
-            if (DirectionEnum.EAST.equals(this.direction.getDirection())) {
-                this.direction.updateDirection(DirectionEnum.SOUTH);
-            } else if (DirectionEnum.SOUTH.equals(this.direction.getDirection())) {
-                this.direction.updateDirection(DirectionEnum.WEST);
-            } else if (DirectionEnum.WEST.equals(this.direction.getDirection())) {
-                this.direction.updateDirection(DirectionEnum.NORTH);
+    public void turns(SideEnum side) {
+        if (SideEnum.RIGHT.equals(side)) {
+            if (isDirectionEastOriented()) {
+                moveToSouthDirection();
+            } else if (isDirectionSouthOriented()) {
+                moveToWestDirection();
+            } else if (isDirectionWestOriented()) {
+                moveToNorthDirection();
             } else {
-                this.direction.updateDirection(DirectionEnum.EAST);
+                moveToEastDirection();
             }
         }
-        if ("LEFT".equals(direction)) {
-            if (DirectionEnum.EAST.equals(this.direction.getDirection())) {
-                this.direction.updateDirection(DirectionEnum.NORTH);
-            } else if (DirectionEnum.SOUTH.equals(this.direction.getDirection())) {
-                this.direction.updateDirection(DirectionEnum.EAST);
-            } else if (DirectionEnum.WEST.equals(this.direction.getDirection())) {
-                this.direction.updateDirection(DirectionEnum.SOUTH);
+        if (SideEnum.LEFT.equals(side)) {
+            if (isDirectionEastOriented()) {
+                moveToNorthDirection();
+            } else if (isDirectionSouthOriented()) {
+                moveToEastDirection();
+            } else if (isDirectionWestOriented()) {
+                moveToSouthDirection();
             } else {
-                this.direction.updateDirection(DirectionEnum.WEST);
+                moveToWestDirection();
             }
         }
+    }
+
+    private void moveToNorthDirection() {
+        this.direction.updateDirection(DirectionEnum.NORTH);
+    }
+
+    private void moveToWestDirection() {
+        this.direction.updateDirection(DirectionEnum.WEST);
+    }
+
+    private void moveToSouthDirection() {
+        this.direction.updateDirection(DirectionEnum.SOUTH);
+    }
+
+    private void moveToEastDirection() {
+        this.direction.updateDirection(DirectionEnum.EAST);
+    }
+
+    private boolean isDirectionWestOriented() {
+        return DirectionEnum.WEST.equals(this.direction.getDirection());
+    }
+
+    private boolean isDirectionSouthOriented() {
+        return DirectionEnum.SOUTH.equals(this.direction.getDirection());
+    }
+
+    private boolean isDirectionEastOriented() {
+        return DirectionEnum.EAST.equals(this.direction.getDirection());
     }
 }

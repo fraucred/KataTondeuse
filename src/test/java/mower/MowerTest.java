@@ -1,14 +1,12 @@
 package mower;
 
 import mower.direction.DirectionEnum;
+import mower.direction.SideEnum;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MowerTest {
-
-    public static final String RIGHT = "RIGHT";
-    public static final String LEFT = "LEFT";
 
     @Test
     public void should_return_0_0_coordinates_and_north_direction_when_mower_is_declared_without_any_action() {
@@ -25,7 +23,7 @@ public class MowerTest {
         Mower mower = new Mower();
         MowerDirection expectedDirection = new MowerDirection(DirectionEnum.EAST);
 
-        mower.turns(RIGHT);
+        mower.turns(SideEnum.RIGHT);
 
         assertEquals(expectedDirection, mower.getDirection());
     }
@@ -35,8 +33,8 @@ public class MowerTest {
         Mower mower = new Mower();
         MowerDirection expectedDirection = new MowerDirection(DirectionEnum.SOUTH);
 
-        mower.turns(RIGHT);
-        mower.turns(RIGHT);
+        mower.turns(SideEnum.RIGHT);
+        mower.turns(SideEnum.RIGHT);
 
         assertEquals(expectedDirection, mower.getDirection());
     }
@@ -46,9 +44,9 @@ public class MowerTest {
         Mower mower = new Mower();
         MowerDirection expectedDirection = new MowerDirection(DirectionEnum.WEST);
 
-        mower.turns(RIGHT);
-        mower.turns(RIGHT);
-        mower.turns(RIGHT);
+        mower.turns(SideEnum.RIGHT);
+        mower.turns(SideEnum.RIGHT);
+        mower.turns(SideEnum.RIGHT);
 
         assertEquals(expectedDirection, mower.getDirection());
     }
@@ -58,10 +56,10 @@ public class MowerTest {
         Mower mower = new Mower();
         MowerDirection expectedDirection = new MowerDirection(DirectionEnum.NORTH);
 
-        mower.turns(RIGHT);
-        mower.turns(RIGHT);
-        mower.turns(RIGHT);
-        mower.turns(RIGHT);
+        mower.turns(SideEnum.RIGHT);
+        mower.turns(SideEnum.RIGHT);
+        mower.turns(SideEnum.RIGHT);
+        mower.turns(SideEnum.RIGHT);
 
         assertEquals(expectedDirection, mower.getDirection());
     }
@@ -71,7 +69,7 @@ public class MowerTest {
         Mower mower = new Mower();
         MowerDirection expectedDirection = new MowerDirection(DirectionEnum.WEST);
 
-        mower.turns(LEFT);
+        mower.turns(SideEnum.LEFT);
 
         assertEquals(expectedDirection, mower.getDirection());
     }
@@ -81,8 +79,8 @@ public class MowerTest {
         Mower mower = new Mower();
         MowerDirection expectedDirection = new MowerDirection(DirectionEnum.SOUTH);
 
-        mower.turns(LEFT);
-        mower.turns(LEFT);
+        mower.turns(SideEnum.LEFT);
+        mower.turns(SideEnum.LEFT);
 
         assertEquals(expectedDirection, mower.getDirection());
     }
@@ -92,9 +90,9 @@ public class MowerTest {
         Mower mower = new Mower();
         MowerDirection expectedDirection = new MowerDirection(DirectionEnum.EAST);
 
-        mower.turns(LEFT);
-        mower.turns(LEFT);
-        mower.turns(LEFT);
+        mower.turns(SideEnum.LEFT);
+        mower.turns(SideEnum.LEFT);
+        mower.turns(SideEnum.LEFT);
 
         assertEquals(expectedDirection, mower.getDirection());
     }
@@ -104,10 +102,10 @@ public class MowerTest {
         Mower mower = new Mower();
         MowerDirection expectedDirection = new MowerDirection(DirectionEnum.NORTH);
 
-        mower.turns(LEFT);
-        mower.turns(LEFT);
-        mower.turns(LEFT);
-        mower.turns(LEFT);
+        mower.turns(SideEnum.LEFT);
+        mower.turns(SideEnum.LEFT);
+        mower.turns(SideEnum.LEFT);
+        mower.turns(SideEnum.LEFT);
 
         assertEquals(expectedDirection, mower.getDirection());
     }
