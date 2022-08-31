@@ -21,4 +21,8 @@ public class MowerGrass {
     public void updateSize(Integer newGrassWidth, Integer newGrassHeight) {
         this.grass.updateSize(newGrassWidth, newGrassHeight);
     }
+
+    public Boolean checkValidCoordinates(MowerCoordinates falseCoordinates) {
+        return null;
+    }
 }

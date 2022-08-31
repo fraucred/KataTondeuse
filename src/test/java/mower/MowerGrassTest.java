@@ -2,7 +2,7 @@ package mower;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class MowerGrassTest {
 
@@ -36,6 +36,16 @@ public class MowerGrassTest {
 
         assertEquals(expectedGrassWidth, grass.getWidth());
         assertEquals(expectedGrassHeight, grass.getHeight());
+    }
+
+    @Test
+    void should_return_false_valid_coordinates_when_coordinates_are_outside_of_3_by_3_sized_grass() {
+        MowerGrass grass = new MowerGrass(3, 3);
+        MowerCoordinates falseCoordinates = new MowerCoordinates(5, 5);
+
+        Boolean areValidCoordinates = grass.checkValidCoordinates(falseCoordinates);
+
+        assertFalse(areValidCoordinates);
     }
 
 }
