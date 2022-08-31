@@ -23,6 +23,6 @@ public class MowerGrass {
     }
 
     public Boolean checkValidCoordinates(MowerCoordinates falseCoordinates) {
-        return null;
+        return Boolean.FALSE;
     }
 }
