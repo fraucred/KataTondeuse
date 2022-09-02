@@ -2,6 +2,8 @@ package mower;
 
 import mower.grass.Grass;
 
+import java.util.Objects;
+
 public class MowerGrass {
 
     private final Grass grass = new Grass();
@@ -35,5 +37,18 @@ public class MowerGrass {
 
     public Boolean checkNegativeCoordinates(Integer horizontalAxis, Integer verticalAxis) {
         return verticalAxis < 0 || horizontalAxis < 0;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MowerGrass that = (MowerGrass) o;
+        return Objects.equals(grass, that.grass);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(grass);
     }
 }
