@@ -18,6 +18,15 @@ public class InitMowerUseCaseTest {
         assertEquals("5 5 1 2 N GAGAGAGAA 3 3 E AADAADADDA", initMowerUseCase.getFileContent());
     }
 
+    @Test
+    public void should_read_text_file_and_return_5_by_5_sized_grass() throws IOException {
+        Path filePath = Path.of("src/test/resources/textFile.txt");
+        InitMowerUseCase initMowerUseCase = new InitMowerUseCase(Files.readString(filePath));
+        MowerGrass expectedGrass = new MowerGrass(5, 5);
+
+        assertEquals(expectedGrass, initMowerUseCase.getGrass());
+    }
+
 
     public void should_print_mower_final_position() {
 
