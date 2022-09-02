@@ -12,7 +12,7 @@ public class MowerCoordinates {
     }
 
     public MowerCoordinates(Integer newHorizontalAxis, Integer newVerticalAxis) {
-        updateCoordinates(newHorizontalAxis, newVerticalAxis);
+        updateCoordinates(newVerticalAxis, newHorizontalAxis);
     }
 
     public Object getHorizontalAxis() {
@@ -31,7 +31,7 @@ public class MowerCoordinates {
         return this.axis.getVerticalAxisValue();
     }
 
-    public void updateCoordinates(Integer newHorizontalAxis, Integer newVerticalAxis) {
+    public void updateCoordinates(Integer newVerticalAxis, Integer newHorizontalAxis) {
         this.axis.updateCoordinates(newHorizontalAxis, newVerticalAxis);
     }
 
