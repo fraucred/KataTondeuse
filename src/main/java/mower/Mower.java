@@ -7,19 +7,21 @@ import java.util.Objects;
 
 public class Mower {
 
-    private final MowerDirection direction = new MowerDirection();
-    private final MowerCoordinates coordinates = new MowerCoordinates();
+    private final MowerDirection direction;
+    private final MowerCoordinates coordinates;
     private final MowerGrass grass;
 
-    public Mower(MowerGrass grass) {
+    public Mower(MowerDirection direction, MowerCoordinates coordinates, MowerGrass grass) {
+        this.direction = direction;
+        this.coordinates = coordinates;
         this.grass = grass;
     }
 
-    public Object getCoordinates() {
+    public MowerCoordinates getCoordinates() {
         return this.coordinates;
     }
 
-    public Object getDirection() {
+    public MowerDirection getDirection() {
         return this.direction;
     }
 
@@ -49,14 +51,17 @@ public class Mower {
     }
 
     public void advances() {
-        if (isDirectionNorthOriented()) {
-            this.coordinates.updateCoordinates(this.coordinates.getVerticalAxisValue() + 1, this.coordinates.getHorizontalAxisValue());
-        } else if (isDirectionSouthOriented()) {
-            this.coordinates.updateCoordinates(this.coordinates.getVerticalAxisValue() - 1, this.coordinates.getHorizontalAxisValue());
-        } else if (isDirectionWestOriented()) {
-            this.coordinates.updateCoordinates(this.coordinates.getVerticalAxisValue(), this.coordinates.getHorizontalAxisValue() - 1);
-        } else {
-            this.coordinates.updateCoordinates(this.coordinates.getVerticalAxisValue(), this.coordinates.getHorizontalAxisValue() + 1);
+        Integer coordinateVerticalAxisValue = this.coordinates.getVerticalAxisValue();
+        Integer coordinateHorizontalAxisValue = this.coordinates.getHorizontalAxisValue();
+
+        if (isDirectionNorthOriented() && this.grass.checkCoordinatesWithinGrassSize(coordinateHorizontalAxisValue, coordinateVerticalAxisValue + 1)) {
+            this.coordinates.updateCoordinates(coordinateHorizontalAxisValue, coordinateVerticalAxisValue + 1);
+        } else if (isDirectionSouthOriented() && this.grass.checkCoordinatesWithinGrassSize(coordinateHorizontalAxisValue, coordinateVerticalAxisValue - 1)) {
+            this.coordinates.updateCoordinates(coordinateHorizontalAxisValue, coordinateVerticalAxisValue - 1);
+        } else if (isDirectionWestOriented() && this.grass.checkCoordinatesWithinGrassSize(coordinateHorizontalAxisValue - 1, coordinateVerticalAxisValue)) {
+            this.coordinates.updateCoordinates(coordinateHorizontalAxisValue - 1, coordinateVerticalAxisValue);
+        } else if (isDirectionEastOriented() && this.grass.checkCoordinatesWithinGrassSize(coordinateHorizontalAxisValue + 1, coordinateVerticalAxisValue)) {
+            this.coordinates.updateCoordinates(coordinateHorizontalAxisValue + 1, coordinateVerticalAxisValue);
         }
     }
 
