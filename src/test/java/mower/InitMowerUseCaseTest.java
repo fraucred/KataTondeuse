@@ -8,6 +8,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class InitMowerUseCaseTest {
 
@@ -35,8 +36,23 @@ public class InitMowerUseCaseTest {
         MowerCoordinates expectedCoordinates = new MowerCoordinates(1, 2);
         MowerDirection expectedDirection = new MowerDirection(DirectionEnum.NORTH);
 
-        assertEquals(expectedCoordinates, initMowerUseCase.getMowers().get(0).getCoordinates());
-        assertEquals(expectedDirection, initMowerUseCase.getMowers().get(0).getDirection());
+        assertTrue(initMowerUseCase.getMowersByScenario().keySet()
+                .stream()
+                .anyMatch(mower -> expectedCoordinates.equals(mower.getCoordinates())
+                        && expectedDirection.equals(mower.getDirection())));
+    }
+
+    @Test
+    public void should_read_text_file_and_return_second_created_mower_coordinates_and_direction() throws IOException {
+        Path filePath = Path.of("src/test/resources/textFile.txt");
+        InitMowerUseCase initMowerUseCase = new InitMowerUseCase(Files.readString(filePath));
+        MowerCoordinates expectedCoordinates = new MowerCoordinates(3, 3);
+        MowerDirection expectedDirection = new MowerDirection(DirectionEnum.EAST);
+
+        assertTrue(initMowerUseCase.getMowersByScenario().keySet()
+                .stream()
+                .anyMatch(mower -> expectedCoordinates.equals(mower.getCoordinates())
+                        && expectedDirection.equals(mower.getDirection())));
     }
 
     @Test
