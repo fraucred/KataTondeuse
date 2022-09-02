@@ -3,8 +3,13 @@ package mower.coordinates;
 import java.util.Objects;
 
 public class Axis {
-    private final HorizontalAxis horizontalAxis = new HorizontalAxis(0);
-    private final VerticalAxis verticalAxis = new VerticalAxis(0);
+    private final HorizontalAxis horizontalAxis;
+    private final VerticalAxis verticalAxis;
+
+    public Axis(Integer horizontalAxis, Integer verticalAxis) {
+        this.horizontalAxis = new HorizontalAxis(horizontalAxis);
+        this.verticalAxis = new VerticalAxis(verticalAxis);
+    }
 
     public HorizontalAxis getHorizontalAxis() {
         return horizontalAxis;

@@ -1,21 +1,20 @@
 package mower;
 
 import mower.coordinates.Axis;
+import mower.coordinates.HorizontalAxis;
+import mower.coordinates.VerticalAxis;
 
 import java.util.Objects;
 
 public class MowerCoordinates {
 
-    private final Axis axis = new Axis();
-
-    public MowerCoordinates() {
-    }
+    private final Axis axis;
 
     public MowerCoordinates(Integer newHorizontalAxis, Integer newVerticalAxis) {
-        updateCoordinates(newVerticalAxis, newHorizontalAxis);
+        this.axis = new Axis(newHorizontalAxis, newVerticalAxis);
     }
 
-    public Object getHorizontalAxis() {
+    public HorizontalAxis getHorizontalAxis() {
         return this.axis.getHorizontalAxis();
     }
 
@@ -23,7 +22,7 @@ public class MowerCoordinates {
         return this.axis.getHorizontalAxisValue();
     }
 
-    public Object getVerticalAxis() {
+    public VerticalAxis getVerticalAxis() {
         return this.axis.getVerticalAxis();
     }
 
@@ -31,7 +30,7 @@ public class MowerCoordinates {
         return this.axis.getVerticalAxisValue();
     }
 
-    public void updateCoordinates(Integer newVerticalAxis, Integer newHorizontalAxis) {
+    public void updateCoordinates(Integer newHorizontalAxis, Integer newVerticalAxis) {
         this.axis.updateCoordinates(newHorizontalAxis, newVerticalAxis);
     }
 
