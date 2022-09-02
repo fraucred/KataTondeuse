@@ -109,4 +109,16 @@ public class MowerTest {
 
         assertEquals(expectedDirection, mower.getDirection());
     }
+
+    @Test
+    public void should_return_0_1_coordinates_when_mower_advances_from_0_0_N() {
+        Mower mower = new Mower();
+        MowerDirection expectedMowerNorthDirection = new MowerDirection(DirectionEnum.NORTH);
+        MowerCoordinates expectedMowerCoordinates = new MowerCoordinates(0, 1);
+
+        mower.advances();
+
+        assertEquals(expectedMowerNorthDirection, mower.getDirection());
+        assertEquals(expectedMowerCoordinates, mower.getCoordinates());
+    }
 }

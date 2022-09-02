@@ -40,6 +40,9 @@ public class Mower {
         }
     }
 
+    public void advances() {
+    }
+
     private void moveToNorthDirection() {
         this.direction.updateDirection(DirectionEnum.NORTH);
     }
