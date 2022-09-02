@@ -15,6 +15,7 @@ public class InitMowerUseCase {
         this.fileContent = fileContent;
         this.inputValues = Arrays.stream(fileContent.split(" ")).toList();
         this.grass = new MowerGrass(Integer.parseInt(inputValues.get(0)), Integer.parseInt(inputValues.get(1)));
+
         for (int i = 2; i < inputValues.size(); i = i + 4) {
             Mower newMower = new Mower(
                     new MowerDirection(inputValues.get(i + 2)),
