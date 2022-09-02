@@ -22,7 +22,7 @@ public class MowerGrass {
         this.grass.updateSize(newGrassWidth, newGrassHeight);
     }
 
-    public Boolean checkValidCoordinates(MowerCoordinates falseCoordinates) {
-        return Boolean.FALSE;
+    public Boolean checkCoordinatesWithinGrassSize(MowerCoordinates coordinates) {
+        return coordinates.getVerticalAxis() < grass.getHeight() && coordinates.getHorizontalAxis() < grass.getWidth() ;
     }
 }

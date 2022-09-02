@@ -41,9 +41,9 @@ public class MowerGrassTest {
     @Test
     void should_return_false_valid_coordinates_when_coordinates_are_outside_of_3_by_3_sized_grass() {
         MowerGrass grass = new MowerGrass(3, 3);
-        MowerCoordinates falseCoordinates = new MowerCoordinates(5, 5);
+        MowerCoordinates coordinatesOutsideGrass = new MowerCoordinates(5, 5);
 
-        Boolean areValidCoordinates = grass.checkValidCoordinates(falseCoordinates);
+        Boolean areValidCoordinates = grass.checkCoordinatesWithinGrassSize(coordinatesOutsideGrass);
 
         assertFalse(areValidCoordinates);
     }
@@ -51,9 +51,9 @@ public class MowerGrassTest {
     @Test
     void should_return_true_valid_coordinates_when_coordinates_are_inside_of_3_by_3_sized_grass() {
         MowerGrass grass = new MowerGrass(3, 3);
-        MowerCoordinates rightCoordinates = new MowerCoordinates(2, 2);
+        MowerCoordinates coordinatesWithinGrass = new MowerCoordinates(2, 2);
 
-        Boolean areValidCoordinates = grass.checkValidCoordinates(rightCoordinates);
+        Boolean areValidCoordinates = grass.checkCoordinatesWithinGrassSize(coordinatesWithinGrass);
 
         assertTrue(areValidCoordinates);
     }
