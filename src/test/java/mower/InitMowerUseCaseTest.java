@@ -1,5 +1,6 @@
 package mower;
 
+import mower.direction.DirectionEnum;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -27,6 +28,18 @@ public class InitMowerUseCaseTest {
         assertEquals(expectedGrass, initMowerUseCase.getGrass());
     }
 
+    @Test
+    public void should_read_text_file_and_return_first_created_mower_coordinates_and_direction() throws IOException {
+        Path filePath = Path.of("src/test/resources/textFile.txt");
+        InitMowerUseCase initMowerUseCase = new InitMowerUseCase(Files.readString(filePath));
+        MowerCoordinates expectedCoordinates = new MowerCoordinates(1, 2);
+        MowerDirection expectedDirection = new MowerDirection(DirectionEnum.NORTH);
+
+        assertEquals(expectedCoordinates, initMowerUseCase.getMowers().get(0).getCoordinates());
+        assertEquals(expectedDirection, initMowerUseCase.getMowers().get(0).getDirection());
+    }
+
+    @Test
 
     public void should_print_mower_final_position() {
 

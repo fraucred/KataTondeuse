@@ -15,6 +15,10 @@ public class MowerDirection {
         this.direction = new Direction(DirectionEnum.NORTH);
     }
 
+    public MowerDirection(String character) {
+        this.direction = new Direction(DirectionEnum.parseFromCharacter(character));
+    }
+
     public DirectionEnum getDirection() {
         return this.direction.getDirection();
     }
