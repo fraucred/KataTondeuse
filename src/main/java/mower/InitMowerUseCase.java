@@ -1,15 +1,13 @@
 package mower;
 
-import java.io.File;
-
 public class InitMowerUseCase {
-    private final File file;
+    private final String fileContent;
 
-    public InitMowerUseCase(File file) {
-        this.file = file;
+    public InitMowerUseCase(String fileContent) {
+        this.fileContent = fileContent;
     }
 
-    public String printFile() {
-        return file.toString();
+    public String getFileContent() {
+        return fileContent;
     }
 }
