@@ -14,6 +14,14 @@ public class Axis {
         return verticalAxis;
     }
 
+    public Integer getHorizontalAxisValue() {
+        return horizontalAxis.getValue();
+    }
+
+    public Integer getVerticalAxisValue() {
+        return verticalAxis.getValue();
+    }
+
     public void updateCoordinates(Integer newHorizontalAxis, Integer newVerticalAxis) {
         this.horizontalAxis.updateValue(newHorizontalAxis);
         this.verticalAxis.updateValue(newVerticalAxis);

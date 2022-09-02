@@ -23,6 +23,7 @@ public class MowerGrass {
     }
 
     public Boolean checkCoordinatesWithinGrassSize(MowerCoordinates coordinates) {
-        return coordinates.getVerticalAxis() < grass.getHeight() && coordinates.getHorizontalAxis() < grass.getWidth() ;
+        return coordinates.getVerticalAxisValue() < grass.getHeight() &&
+                coordinates.getHorizontalAxisValue() < grass.getWidth();
     }
 }

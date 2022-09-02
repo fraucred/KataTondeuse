@@ -15,16 +15,20 @@ public class MowerCoordinates {
         updateCoordinates(newHorizontalAxis, newVerticalAxis);
     }
 
-    public Object getAxis() {
-        return null;
-    }
-
     public Object getHorizontalAxis() {
         return this.axis.getHorizontalAxis();
     }
 
+    public Integer getHorizontalAxisValue() {
+        return this.axis.getHorizontalAxisValue();
+    }
+
     public Object getVerticalAxis() {
         return this.axis.getVerticalAxis();
+    }
+
+    public Integer getVerticalAxisValue() {
+        return this.axis.getVerticalAxisValue();
     }
 
     public void updateCoordinates(Integer newHorizontalAxis, Integer newVerticalAxis) {
