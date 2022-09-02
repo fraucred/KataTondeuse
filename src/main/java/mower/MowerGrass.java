@@ -23,7 +23,17 @@ public class MowerGrass {
     }
 
     public Boolean checkCoordinatesWithinGrassSize(MowerCoordinates coordinates) {
-        return coordinates.getVerticalAxisValue() < grass.getHeight() &&
-                coordinates.getHorizontalAxisValue() < grass.getWidth();
+        Integer verticalAxisValue = coordinates.getVerticalAxisValue();
+        Integer horizontalAxisValue = coordinates.getHorizontalAxisValue();
+        return !checkNegativeCoordinates(horizontalAxisValue, verticalAxisValue) && verticalAxisValue < grass.getHeight() &&
+                horizontalAxisValue < grass.getWidth();
+    }
+
+    public Boolean checkCoordinatesWithinGrassSize(Integer horizontalAxis, Integer verticalAxis) {
+        return !checkNegativeCoordinates(horizontalAxis, verticalAxis) && verticalAxis <= grass.getHeight() && horizontalAxis <= grass.getWidth();
+    }
+
+    public Boolean checkNegativeCoordinates(Integer horizontalAxis, Integer verticalAxis) {
+        return verticalAxis < 0 || horizontalAxis < 0;
     }
 }
