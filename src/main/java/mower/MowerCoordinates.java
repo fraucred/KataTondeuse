@@ -46,4 +46,9 @@ public class MowerCoordinates {
     public int hashCode() {
         return Objects.hash(axis);
     }
+
+    @Override
+    public String toString() {
+        return getHorizontalAxisValue() + " " + getVerticalAxisValue();
+    }
 }

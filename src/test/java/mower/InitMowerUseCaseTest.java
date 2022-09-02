@@ -56,9 +56,24 @@ public class InitMowerUseCaseTest {
     }
 
     @Test
+    public void should_execute_file_text_mower_use_case_and_print_mower_final_locations() throws IOException {
+        Path filePath = Path.of("src/test/resources/textFile.txt");
+        InitMowerUseCase initMowerUseCase = new InitMowerUseCase(Files.readString(filePath));
+        MowerCoordinates expectedFirstMowerCoordinates = new MowerCoordinates(1, 3);
+        MowerDirection expectedFirstMowerDirection = new MowerDirection(DirectionEnum.NORTH);
+        MowerCoordinates expectedSecondMowerCoordinates = new MowerCoordinates(5, 1);
+        MowerDirection expectedSecondMowerDirection = new MowerDirection(DirectionEnum.EAST);
 
-    public void should_print_mower_final_position() {
+        initMowerUseCase.proceed();
 
+        assertTrue(initMowerUseCase.getMowersByScenario().keySet()
+                .stream()
+                .anyMatch(mower -> expectedFirstMowerCoordinates.equals(mower.getCoordinates())
+                        && expectedFirstMowerDirection.equals(mower.getDirection())));
+        assertTrue(initMowerUseCase.getMowersByScenario().keySet()
+                .stream()
+                .anyMatch(mower -> expectedSecondMowerCoordinates.equals(mower.getCoordinates())
+                        && expectedSecondMowerDirection.equals(mower.getDirection())));
     }
 
 }

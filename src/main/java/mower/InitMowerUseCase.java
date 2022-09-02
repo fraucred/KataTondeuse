@@ -1,5 +1,7 @@
 package mower;
 
+import mower.processor.MowerUseCaseProcessor;
+
 import java.util.*;
 
 public class InitMowerUseCase {
@@ -32,6 +34,10 @@ public class InitMowerUseCase {
 
     public Map<Mower, String> getMowersByScenario() {
         return mowersByScenario;
+    }
+
+    public void proceed() {
+        mowersByScenario.forEach(MowerUseCaseProcessor::execute);
     }
 
     @Override

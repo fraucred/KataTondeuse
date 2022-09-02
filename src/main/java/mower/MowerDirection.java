@@ -20,7 +20,7 @@ public class MowerDirection {
     }
 
     public DirectionEnum getDirection() {
-        return this.direction.getDirection();
+        return this.direction.getDirectionCardinal();
     }
 
     public void updateDirection(DirectionEnum newDirection) {
@@ -38,5 +38,10 @@ public class MowerDirection {
     @Override
     public int hashCode() {
         return Objects.hash(direction);
+    }
+
+    @Override
+    public String toString() {
+        return DirectionEnum.parseFromEnum(getDirection());
     }
 }

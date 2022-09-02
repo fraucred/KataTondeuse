@@ -109,4 +109,9 @@ public class Mower {
     public int hashCode() {
         return Objects.hash(direction, coordinates, grass);
     }
+
+    @Override
+    public String toString() {
+        return coordinates.toString() + " " + direction.toString() + " ";
+    }
 }

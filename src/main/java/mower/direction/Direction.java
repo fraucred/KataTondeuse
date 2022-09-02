@@ -9,7 +9,7 @@ public class Direction {
         this.directionCardinal = directionCardinal;
     }
 
-    public DirectionEnum getDirection() {
+    public DirectionEnum getDirectionCardinal() {
         return this.directionCardinal;
     }
 
