@@ -6,4 +6,8 @@ public class MowerStrategy {
             mower.setDirection("S");
         }
     }
+
+    public static void mowerAdvance(Mower mower) {
+        mower.setY(1);
+    }
 }
