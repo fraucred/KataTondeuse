@@ -7,6 +7,6 @@ public class Mower {
     }
 
     public String getPosition() {
-        return null;
+        return "0 0 W";
     }
 }
