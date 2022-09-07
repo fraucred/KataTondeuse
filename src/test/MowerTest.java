@@ -13,4 +13,14 @@ public class MowerTest {
 
         assertEquals(expectedPosition, mower.getPosition());
     }
+
+    @Test
+    void given_mower_at_0_0_W_position_when_mower_turns_left_then_mower_new_position_is_0_0_S() {
+        Mower mower = new Mower(0, 0, "W");
+        String expectedPosition = "0 0 S";
+
+        mower.turns("G");
+
+        assertEquals(expectedPosition, mower.getPosition());
+    }
 }
