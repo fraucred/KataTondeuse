@@ -22,6 +22,10 @@ public class Mower {
 //        return (Mower) mowerTurnStrategy(this, move);
     }
 
+    public void advances() {
+
+    }
+
     public String getPosition() {
         return x + " " + y + " " + direction;
     }
