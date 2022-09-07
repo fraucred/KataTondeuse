@@ -10,14 +10,27 @@ public class Mower {
     }
 
     public void turns(String move) {
-        if ("N".equals(this.direction)) {
-            this.direction = "W";
-        } else {
-            this.direction = "S";
-        }
+//        if ("N".equals(this.direction)) {
+//            this.direction = "W";
+//        } else {
+//            this.direction = "S";
+//        }
+
+        // SELF-BRAINSTORM
+        MowerStrategy.mowerTurnStrategy(this, move);
+        // SELF-BRAINSTORM - immutable
+//        return (Mower) mowerTurnStrategy(this, move);
     }
 
     public String getPosition() {
         return x + " " + y + " " + direction;
+    }
+
+    public String getDirection() {
+        return direction;
+    }
+
+    public void setDirection(String direction) {
+        this.direction = direction;
     }
 }
