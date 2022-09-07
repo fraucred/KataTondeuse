@@ -8,6 +8,11 @@ public class MowerStrategy {
     }
 
     public static void mowerAdvance(Mower mower) {
-        mower.setY(1);
+        if ("N".equals(mower.getDirection())) {
+            mower.setY(1);
+        }
+        if ("E".equals(mower.getDirection())) {
+            mower.setX(1);
+        }
     }
 }
