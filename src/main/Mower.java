@@ -10,13 +10,7 @@ public class Mower {
     }
 
     public void turns(String move) {
-//        if ("N".equals(this.direction)) {
-//            this.direction = "W";
-//        } else {
-//            this.direction = "S";
-//        }
-
-        // SELF-BRAINSTORM
+        // Mower is mutable
         MowerStrategy.mowerTurnStrategy(this, move);
         // SELF-BRAINSTORM - immutable
 //        return (Mower) mowerTurnStrategy(this, move);
@@ -52,5 +46,9 @@ public class Mower {
 
     public void setY(int y) {
         this.y = y;
+    }
+
+    public Direction getLeftDirection() {
+        return this.direction.left();
     }
 }
