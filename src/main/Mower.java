@@ -1,9 +1,9 @@
 public class Mower {
-    private String direction;
+    private Direction direction;
     private int x;
     private int y;
 
-    public Mower(int x, int y, String direction) {
+    public Mower(int x, int y, Direction direction) {
         this.direction = direction;
         this.x = x;
         this.y = y;
@@ -27,14 +27,14 @@ public class Mower {
     }
 
     public String getPosition() {
-        return x + " " + y + " " + direction;
+        return x + " " + y + " " + direction.getLabel();
     }
 
-    public String getDirection() {
+    public Direction getDirection() {
         return direction;
     }
 
-    public void setDirection(String direction) {
+    public void setDirection(Direction direction) {
         this.direction = direction;
     }
 
