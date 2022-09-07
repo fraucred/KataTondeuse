@@ -2,7 +2,7 @@ package mower.common;
 
 import java.util.Objects;
 
-public abstract class SimpleValue {
+public abstract class SimpleValue { // TODO remove class
     
     Integer value;
 

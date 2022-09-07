@@ -11,12 +11,12 @@ public class InitMowerUseCase {
 
     private final Map<Mower, String> mowersByScenario = new HashMap<>();
 
-    public InitMowerUseCase(String fileContent) {
+    public InitMowerUseCase(String fileContent) {   // split parsing fichier, init mower & init grass
         this.fileContent = fileContent;
         this.inputValues = Arrays.stream(fileContent.split(" ")).toList();
         this.grass = new MowerGrass(Integer.parseInt(inputValues.get(0)), Integer.parseInt(inputValues.get(1)));
 
-        for (int i = 2; i < inputValues.size(); i = i + 4) {
+        for (int i = 2; i < inputValues.size(); i = i + 4) {    // nommer les index i + ..
             Mower newMower = new Mower(
                     new MowerDirection(inputValues.get(i + 2)),
                     new MowerCoordinates(Integer.parseInt(inputValues.get(i)), Integer.parseInt(inputValues.get(i + 1))),
@@ -27,7 +27,7 @@ public class InitMowerUseCase {
 
     public String getFileContent() {
         return fileContent;
-    }
+    }   // TODO remove method if only used in unit tests
 
     public MowerGrass getGrass() {
         return grass;

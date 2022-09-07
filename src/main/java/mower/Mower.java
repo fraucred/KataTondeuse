@@ -25,7 +25,7 @@ public class Mower {
         return this.direction;
     }
 
-    public void turns(SideEnum side) {
+    public void turns(SideEnum side) {      // DP strategy ? Responsability of DirectionEnum
         if (SideEnum.RIGHT.equals(side)) {
             if (isDirectionEastOriented()) {
                 moveToSouthDirection();
@@ -50,7 +50,7 @@ public class Mower {
         }
     }
 
-    public void advances() {
+    public void advances() {            // DP strategy ? Responsability of DirectionEnum
         Integer coordinateVerticalAxisValue = this.coordinates.getVerticalAxisValue();
         Integer coordinateHorizontalAxisValue = this.coordinates.getHorizontalAxisValue();
 

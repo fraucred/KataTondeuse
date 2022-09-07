@@ -6,7 +6,7 @@ import mower.dimensions.Width;
 import java.util.Objects;
 
 public class Grass {
-    private final Width width = new Width(null);
+    private final Width width = new Width(null);    // TODO nonsense to have width, height with null values
 
     private final Height height = new Height(null);
 

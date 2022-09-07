@@ -3,7 +3,7 @@ package mower.direction;
 public enum DirectionEnum {
     NORTH, EAST, SOUTH, WEST;
 
-    public static DirectionEnum parseFromCharacter(String character) {
+    public static DirectionEnum parseFromCharacter(String character) {  // TODO add private String field
         return switch (character) {
             case "N" -> NORTH;
             case "E" -> EAST;

@@ -2,7 +2,7 @@ package mower.direction;
 
 import java.util.Objects;
 
-public class Direction {
+public class Direction {    // TODO can be removed
     private DirectionEnum directionCardinal;
 
     public Direction(DirectionEnum directionCardinal) {

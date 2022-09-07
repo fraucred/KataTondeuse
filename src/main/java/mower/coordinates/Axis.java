@@ -2,7 +2,7 @@ package mower.coordinates;
 
 import java.util.Objects;
 
-public class Axis {
+public class Axis {     // TODO rename to Position (or implement Point class ?)
     private final HorizontalAxis horizontalAxis;
     private final VerticalAxis verticalAxis;
 
