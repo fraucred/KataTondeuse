@@ -10,7 +10,11 @@ public class Mower {
     }
 
     public void turns(String move) {
-        this.direction = "W";
+        if ("N".equals(this.direction)) {
+            this.direction = "W";
+        } else {
+            this.direction = "S";
+        }
     }
 
     public String getPosition() {
