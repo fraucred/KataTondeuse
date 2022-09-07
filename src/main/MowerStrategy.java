@@ -1,6 +1,10 @@
 public class MowerStrategy {
     public static void mowerTurnStrategy(Mower mower, String move) {
-        mower.setDirection(mower.getLeftDirection());
+        if (move == "G") {
+            mower.setDirection(mower.getLeftDirection());
+        } else if (move == "D") {
+            mower.setDirection(Direction.EAST);
+        }
     }
 
     public static void mowerAdvance(Mower mower) {

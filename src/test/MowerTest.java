@@ -41,4 +41,17 @@ public class MowerTest {
 
         assertEquals(expectedPosition, mower.getPosition());
     }
+
+    @ParameterizedTest
+    @CsvSource(textBlock = """
+            NORTH, E
+            """)
+    void should_turn_right_with_every_direction(Direction direction, String expectedDirection) {
+        Mower mower = new Mower(0, 0, direction);
+        String expectedPosition = "0 0 " + expectedDirection;
+
+        mower.turns("D");
+
+        assertEquals(expectedPosition, mower.getPosition());
+    }
 }
