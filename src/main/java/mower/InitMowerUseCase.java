@@ -14,15 +14,10 @@ public class InitMowerUseCase {
     public InitMowerUseCase(String fileContent) {   // split parsing fichier, init mower & init grass
         this.fileContent = fileContent;
         this.inputValues = Arrays.stream(fileContent.split(" ")).toList();
-        this.grass = new MowerGrass(Integer.parseInt(inputValues.get(0)), Integer.parseInt(inputValues.get(1)));
-
-        for (int i = 2; i < inputValues.size(); i = i + 4) {    // nommer les index i + ..
-            Mower newMower = new Mower(
-                    new MowerDirection(inputValues.get(i + 2)),
-                    new MowerCoordinates(Integer.parseInt(inputValues.get(i)), Integer.parseInt(inputValues.get(i + 1))),
-                    this.grass);
-            mowersByScenario.put(newMower, inputValues.get(i + 3));
-        }
+        Integer grassWidth = Integer.valueOf(inputValues.get(0));
+        Integer grassHeight = Integer.valueOf(inputValues.get(1));
+        this.grass = InitMowerGrass.buildGrassFromDimensions(grassWidth, grassHeight);
+        InitMowerByScenario.buildMowerWithScenario(this.grass, mowersByScenario, inputValues);
     }
 
     public String getFileContent() {
