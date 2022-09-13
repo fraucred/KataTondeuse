@@ -6,18 +6,18 @@ import java.util.*;
 
 public class InitMowerUseCase {
     private final String fileContent;
-    private final List<String> inputValues;
+    private final List<String> inputValues = new ArrayList<>();
     private final MowerGrass grass;
 
     private final Map<Mower, String> mowersByScenario = new HashMap<>();
 
     public InitMowerUseCase(String fileContent) {   // split parsing fichier, init mower & init grass
         this.fileContent = fileContent;
-        this.inputValues = Arrays.stream(fileContent.split(" ")).toList();
+        InitMowerFileContent.buildInputValuesFromFileContent(this.inputValues, fileContent);
         Integer grassWidth = Integer.valueOf(inputValues.get(0));
         Integer grassHeight = Integer.valueOf(inputValues.get(1));
         this.grass = InitMowerGrass.buildGrassFromDimensions(grassWidth, grassHeight);
-        InitMowerByScenario.buildMowerWithScenario(this.grass, mowersByScenario, inputValues);
+        InitMowerByScenario.buildMowerWithScenario(this.grass, this.mowersByScenario, this.inputValues);
     }
 
     public String getFileContent() {
