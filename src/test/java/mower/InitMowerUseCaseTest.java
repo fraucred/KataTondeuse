@@ -13,14 +13,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class InitMowerUseCaseTest {
 
     @Test
-    public void should_read_and_print_text_file_input() throws IOException {
-        Path filePath = Path.of("src/test/resources/textFile.txt");
-        InitMowerUseCase initMowerUseCase = new InitMowerUseCase(Files.readString(filePath));
-
-        assertEquals("5 5 1 2 N GAGAGAGAA 3 3 E AADAADADDA", initMowerUseCase.getFileContent());
-    }
-
-    @Test
     public void should_read_text_file_and_return_5_by_5_sized_grass() throws IOException {
         Path filePath = Path.of("src/test/resources/textFile.txt");
         InitMowerUseCase initMowerUseCase = new InitMowerUseCase(Files.readString(filePath));
